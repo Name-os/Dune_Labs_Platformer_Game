@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1774739309
+::res://::1774740070
 changelog.txt::TextFile::-1::1774739160::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1774739160::0::1::::<><><>0<>0<><>::
 to do list.txt::TextFile::-1::1774739160::0::1::::<><><>0<>0<><>::
@@ -60,9 +60,9 @@ fireflies.tscn::PackedScene::575710550618044371::1774739165::0::1::::<><><>0<>0<
 game.tscn::PackedScene::8183729580308332318::1774739165::0::1::::<><><>0<>0<><>::uid://d04j34stsu7ar::::res://assets/images/tilesets/Firefly Forest Background.png<>uid://c5h3bnesx3d2s::::res://assets/images/tilesets/Firefly Forest Background Tileset.png<>uid://c6ds72j6jakd7::::res://scenes/player.tscn<>uid://v36jwqnbnsw3::::res://assets/images/tilesets/collision.svg<>uid://c6jhc5i44rp6r::::res://assets/images/tilesets/Firefly Forest Background Details.png<>uid://cuyvnuiqdhqs3::::res://assets/images/tilesets/Firefly Forest Hazard.png<>uid://brq7ph0xfqady::::res://assets/images/tilesets/Firefly Forest Tileset Overlay.png<>uid://cfrwpoub4o4v2::::res://scenes/shade.tscn<>uid://ig44sfwx8rxj::::res://scenes/fireflies.tscn<>uid://cgjwy3ime4wpi::::res://scenes/cip.tscn<>uid://dlayctgpsy3nv::::res://scenes/blue_fireflies.tscn
 player.tscn::PackedScene::6956040138156368862::1774739165::0::1::::<><><>0<>0<><>::uid://c8qtrgjtkbiw5::::res://assets/images/spritesheets/player_cat/idle.png<>uid://do62elngv6cn7::::res://scripts/player.gd<>uid://dtpwjrtgedemr::::res://assets/images/spritesheets/player_cat/crouching_idle.png<>uid://beqrbxobqe6x7::::res://assets/images/spritesheets/player_cat/climbing.png<>uid://wgfsl3fwff7v::::res://assets/images/spritesheets/player_cat/jumping.png<>uid://bku83ocvth5y3::::res://assets/images/spritesheets/player_cat/running.png<>uid://ctaw6oik8r1ow::::res://assets/images/spritesheets/player_cat/crouching_running.png<>uid://wff8s1ladlac::::res://assets/images/spritesheets/player_cat/ide_to_sit.png<>uid://cr7qpb70f8oh1::::res://assets/images/spritesheets/player_cat/sleeping.png<>uid://fgt5f3ti7llv::::res://assets/images/spritesheets/player_cat/sitting.png<>uid://dca82xoa4wkw5::::res://assets/images/spritesheets/player_cat/waking.png<>uid://8hpqx8vs3188::::res://assets/images/other/main.png
 shade.tscn::PackedScene::5160243334452579897::1774739165::0::1::::<><><>0<>0<><>::uid://dc0r6k866do1g::::res://scripts/shade.gd<>uid://ikbqqswesk6v::::res://assets/images/spritesheets/Enemies/shade Idle-Sheet.png<>uid://btwu08vteoqgb::::res://assets/images/spritesheets/Enemies/Shade Running-Sheet.png
-::res://scripts/::1774739165
+::res://scripts/::1774739743
 blue_fireflies.gd::GDScript::7440808455364073223::1774739165::0::1::::<>Node2D<><>0<>0<><>::
 cip.gd::GDScript::304816642457283988::1774739165::0::1::::<>Node2D<><>0<>0<><>::
 firefly.gd::GDScript::2615173951298889725::1774739165::0::1::::<>Node2D<><>0<>0<><>::
-player.gd::GDScript::8207548672509129514::1774739165::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.gd::GDScript::8207548672509129514::1774739743::0::1::::<>CharacterBody2D<><>0<>0<><>::
 shade.gd::GDScript::7352337308357050714::1774739165::0::1::::<>CharacterBody2D<><>0<>0<><>::

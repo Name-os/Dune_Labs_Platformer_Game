@@ -15,7 +15,7 @@ func animate():
 	$AnimatedSprite2D.play(animation)
 
 func _physics_process(_delta: float) -> void:
-	dir_x = get_tree().get_nodes_in_group("player")[0].dir_x
+	dir_x = get_tree().get_nodes_in_group("player")[0].dir.x
 	velocity.x = dir_x * speed
 	animate() #animate based on state
 	move_and_slide() #update position and adds delta

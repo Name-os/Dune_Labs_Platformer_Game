@@ -3,19 +3,14 @@ extends CharacterBody2D
 
 @export var speed       := 250
 @export var gravity     := 1100
-@export var jump_power  := 410
+@export var jump_power  := 500
 @export var frame_delay  = 1 #idk what this is
 
 #movement
-var dir_x     := 0.0
-var stamina   := 100 #not in use yet
-var speed_mod := 1.0
-var jump_mod  := 1.0
-
-#acelleration
-var acel_amount := 50
-var max_speed  := 250
-
+var dir           := Vector2()
+var stamina       := 100 #not in use yet
+var speed_mod     := 1.0
+var jump_mod      := 1.0
 
 #state
 #var current_state
@@ -23,6 +18,7 @@ var max_speed  := 250
 var crouching   := false
 var climbing    := false
 var allow_input := true
+var apply_gravity := true
 
 #coyote time
 var frames_since_on_floor := 0
@@ -30,7 +26,7 @@ var coyote_time_limit     := 4
 
 var mod_values = {
 	"crouching" : 0.6,
-	"climb"     : 0.4,
+	"climb"     : 1.5,
 }
 
 func check_bound(lower, upper, num, equal=false):
@@ -40,7 +36,7 @@ func animate():
 	var animation = ""
 	
 #	flip the sprite if going left ony if we are moving		
-	$AnimatedSprite2D.flip_h = dir_x < 0 if dir_x != 0 else $AnimatedSprite2D.flip_h
+	$AnimatedSprite2D.flip_h = dir.x < 0 if dir.x != 0 else $AnimatedSprite2D.flip_h
 	
 	if $timers/sleep.is_stopped():
 		animation = "sleeping"
@@ -48,13 +44,13 @@ func animate():
 	elif $timers/sit.is_stopped():
 		animation = "sitting"
 	elif crouching:
-		animation = "crouching_running" if dir_x else "crouching_idle"
+		animation = "crouching_running" if dir.x else "crouching_idle"
 	elif climbing:
 		animation = "climbing"
 	elif not is_on_floor():
 		animation = "in_air_up" if velocity.y < 1 else "in_air_down"
 	else:	
-		animation = "running" if dir_x else "idle"
+		animation = "running" if dir.x else "idle"
 		
 	$AnimatedSprite2D.play(animation)
 
@@ -66,59 +62,93 @@ func toggle_crouch(): #could make more clean
 		$head.disabled = false
 		speed_mod = 1
 #	change head hit box dir based on dir
-	$head.position.x = (-1.0 if dir_x < 1 else 3.0) if dir_x != 0 else $head.position.x
+	$head.position.x = (-1.0 if dir.x < 1 else 3.0) if dir.x != 0 else $head.position.x
 
 func update_timers():
-	if dir_x or crouching or climbing or velocity.y == -jump_power:
+	if dir:
 		$timers/sit.start()
 		$timers/sleep.start()
 
+func new_input():
+	jump_mod = 1
+	climbing = false
+	apply_gravity = true
+
+	#Climbing button + up or down = up or down movement
+	#Climbing button + jump + no directional input  that is left or right = Jump up while on a wall
+	#Climbing button + jump + directional input = Jump in the direction of the input
+	#Climbing button + on wall = Grip onto wall
+	#No climbing button + walking into wall = slide down wall at constant speed
+	#No climbing button + not walking into wall = freefall
+
+	#if not allow_input:
+		#return
+		
+	dir = Input.get_vector("left","right","up","down")
+	var input_map = {
+		"up"     : Input.is_action_pressed("up"),
+		"down"   : Input.is_action_pressed("down"),
+		"climb"  : Input.is_action_pressed("climb"),
+		"jump"   : Input.is_action_just_pressed("jump")
+	}
+	if input_map["climb"] and is_on_wall():
+		climbing = true
+		speed_mod = mod_values["climb"]
+		
+		if not input_map["jump"] and not input_map["up"] and not input_map["down"]:
+			apply_gravity = false
+			#velocity.y /= 2
+		
+#		regular wall jump
+		if input_map["jump"] and not dir.x:
+			velocity.y = -jump_power * mod_values["climb"]
+##		jump off wall
+		#elif input_map["jump"] and dir.x:
+			#climbing = false
+			#velocity.y = -jump_power
+##		going up or down
+		#elif not input_map["jump"] and dir.y:
+			#velocity.y += dir.y * speed * speed_mod
+	elif input_map["jump"] and (is_on_floor() or frames_since_on_floor <= coyote_time_limit):
+		velocity.y = -jump_power
+	elif input_map["down"] and is_on_floor():
+		crouching = true	
+	elif not $head/ShapeCast2D.is_colliding(): #not allow uncrouch if head is clipped
+		crouching = false
+		
 func get_input():
 	jump_mod = 1
 	climbing = false
 	
 	if allow_input:
-		dir_x = Input.get_axis("left", "right")
+		dir.x = Input.get_axis("left", "right")
 		var input_map = {
-			"jump"   : Input.is_action_pressed("jump"),
+			"up"     : Input.is_action_pressed("up"),
 			"climb"  : Input.is_action_pressed("climb"),
-			"crouch" : Input.is_action_pressed("crouch"),
+			"down"   : Input.is_action_pressed("down"),
 		}
 		if input_map["climb"]:
-			if is_on_wall() and dir_x != 0:
+			if is_on_wall() and dir.x != 0:
 				climbing = true
 				speed_mod = 0.5
-				velocity.y = Input.get_axis("jump", "crouch") * speed * speed_mod #overide the y vel
-		elif input_map["jump"] and (is_on_floor() or frames_since_on_floor <= coyote_time_limit):
+				velocity.y = Input.get_axis("up", "down") * speed * speed_mod #overide the y vel
+		elif input_map["up"] and (is_on_floor() or frames_since_on_floor <= coyote_time_limit):
 			velocity.y = -jump_power
-		elif input_map["crouch"] and is_on_floor():
+		elif input_map["down"] and is_on_floor():
 			crouching = true
 		elif not $head/ShapeCast2D.is_colliding(): #not allow uncrouch if head is clipped
 			crouching = false
 
 func update_vel(delta):
-	# Gravity
-	if not is_on_floor():
+	# y axis
+	if not is_on_floor() and apply_gravity:
 		velocity.y += gravity * delta
 
-	# X axis acceleration
-	if dir_x != 0:
-		# Increment speed if it hasn't reached the limit
-		if speed < max_speed:
-			speed += acel_amount
-		
-		# Clamp speed so it doesn't exceed terminal velocity
-		if speed > max_speed:
-			speed = max_speed
-	else:
-		# Reset current speed when there is no input
-		speed = 0
-		
-	# Apply final horizontal velocity
-	velocity.x = dir_x * speed * speed_mod
+	# X axis 
+	velocity.x = dir.x * speed
 
 func _physics_process(delta: float) -> void:
-	get_input()
+	new_input()
 	update_timers()
 	frames_since_on_floor = 0 if is_on_floor() or climbing else frames_since_on_floor+1 #update frames since on floor
 	toggle_crouch()
@@ -126,3 +156,8 @@ func _physics_process(delta: float) -> void:
 	update_vel(delta) #update the player vel
 	move_and_slide() #update position and adds delta
 	position = Vector2i(round(position/4))*4 #make movement pixel perfect
+	
+	
+#camera values:
+# left: 0
+# bottom: 736

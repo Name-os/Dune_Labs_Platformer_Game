@@ -11,14 +11,14 @@ var dir           := Vector2()
 var stamina       := 100 #not in use yet
 var speed_mod     := 1.0
 var jump_mod      := 1.0
+var gravity_mod   := 1.0
 
 #state
 #var current_state
 #enum states {idle, running, jumping, crouching, climbing}
-var crouching   := false
-var climbing    := false
-var allow_input := true
-var apply_gravity := true
+var crouching     := false
+var climbing      := false
+var allow_input   := true
 
 #coyote time
 var frames_since_on_floor := 0
@@ -71,8 +71,8 @@ func update_timers():
 
 func new_input():
 	jump_mod = 1
+	gravity_mod = 1
 	climbing = false
-	apply_gravity = true
 
 	#Climbing button + up or down = up or down movement
 	#Climbing button + jump + no directional input  that is left or right = Jump up while on a wall
@@ -95,13 +95,12 @@ func new_input():
 		climbing = true
 		speed_mod = mod_values["climb"]
 		
-		if not input_map["jump"] and not input_map["up"] and not input_map["down"]:
-			apply_gravity = false
-			#velocity.y /= 2
-		
-#		regular wall jump
 		if input_map["jump"] and not dir.x:
-			velocity.y = -jump_power * mod_values["climb"]
+			jump_mod = 1.5
+			velocity.y = -jump_power * jump_mod
+			
+
+
 ##		jump off wall
 		#elif input_map["jump"] and dir.x:
 			#climbing = false
@@ -141,8 +140,14 @@ func get_input():
 
 func update_vel(delta):
 	# y axis
-	if not is_on_floor() and apply_gravity:
-		velocity.y += gravity * delta
+	if not is_on_floor():
+		velocity.y += gravity * delta * gravity_mod
+
+	if climbing:
+		if velocity.y != 0:
+			velocity.y += gravity * delta
+			if velocity.y > 0:
+				velocity.y = 0
 
 	# X axis 
 	velocity.x = dir.x * speed

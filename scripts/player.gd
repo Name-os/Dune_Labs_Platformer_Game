@@ -67,7 +67,7 @@ func toggle_crouch():
 	speed_mod = mod_values["crouching"] if crouching else speed_mod
 	if not climbing:
 		speed_mod = 1.0
-	$head.position.x = (-1.0 if dir.x < 1 else 3.0) if dir.x != 0 else $head.position.x
+	$head.position.x = (-1.0 if dir.x < 0 else 3.0) if dir.x != 0 else $head.position.x
 
 func update_timers():
 	if not dir and not climbing:
@@ -94,8 +94,6 @@ func get_input():
 		climbing = false
 	
 	dir = Input.get_vector("left", "right", "up", "down")
-	#dir.x = Input.get_axis("left", "right")
-	#dir.y = Input.get_axis("up", "down")
 	var im = {
 		"up"    : Input.is_action_pressed("up"),
 		"down"  : Input.is_action_pressed("down"),

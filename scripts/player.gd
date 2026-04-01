@@ -80,7 +80,10 @@ func update_stamina(delta):
 			stamina = 0
 
 func force_state_update():
-	pass
+	if not is_on_floor():
+		crouching = false
+	if climbing and crouching:
+		push_error("2 states are active at the same time")
 
 func climb(im):
 	if stamina <= 0:
@@ -88,6 +91,7 @@ func climb(im):
 		return
 		
 	climbing = true
+	
 	speed_mod = mod_values["climb"]
 
 	if im["jump"]:
@@ -106,7 +110,10 @@ func climb(im):
 		velocity.y = speed * dir.y
 	else:
 		velocity.y = 0
+		
 func get_input():
+	if not allow_input:
+		return
 	gravity_mod = 1.0
 	climbing_moving = false
 	if not is_on_floor():
@@ -124,12 +131,12 @@ func get_input():
 
 	if im["climb"] and $body/ShapeCast2D.is_colliding() and wall_jump_cooldown <= 0:
 		climb(im)
-	elif im["jump"] and (is_on_floor() or frames_since_on_floor <= coyote_time_limit):
-		velocity.y = -jump_power
-	elif im["down"] and is_on_floor() and not im["climb"]:
-		crouching = true
-	elif not $head/ShapeCast2D.is_colliding():
+	elif not $head/ShapeCast2D.is_colliding(): #make so cant do things while head is clipped
 		crouching = false
+		if im["jump"] and (is_on_floor() or frames_since_on_floor <= coyote_time_limit):
+			velocity.y = -jump_power
+		elif im["down"] and is_on_floor() and not im["climb"]:
+			crouching = true
 
 func update_vel(delta):
 	if not is_on_floor() and not climbing:
@@ -137,14 +144,15 @@ func update_vel(delta):
 	velocity.x = dir.x * speed * speed_mod
 
 func _physics_process(delta: float) -> void:
+	frames_since_on_floor = 0 if is_on_floor() else frames_since_on_floor + 1
 	get_input()
+	force_state_update()
 	update_stamina(delta)
 	update_timers()
-	frames_since_on_floor = 0 if is_on_floor() else frames_since_on_floor + 1
 	toggle_crouch()
-	animate()
 	update_vel(delta)
 	move_and_slide()
+	animate()
 	#position = Vector2i(round(position / 4)) * 4
 
 	if wall_jump_cooldown > 0:

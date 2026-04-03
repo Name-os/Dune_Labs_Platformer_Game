@@ -171,12 +171,13 @@ func get_input():
 	if im["climb"] and $body/ShapeCast2D.is_colliding() and wall_jump_cooldown <= 0 and not $head/ShapeCast2D.is_colliding():
 		climb(im)
 	elif not $head/ShapeCast2D.is_colliding(): #dont allow certain things if head is clipped
-		if im["jump"] and (is_on_floor() or frames_since_on_floor <= coyote_time_limit):
-			for shroom in springshrooms: #could optimise using different nodes
+		if im["jump"] or velocity.y > 0:
+			for shroom in springshrooms: #could optimise using different nodes #springshroom jumping
 				if position.distance_squared_to(shroom.position) <= shroom_jump_radius:
 					velocity.y = -jump_power * mod_values["shroom_jump"]
 					shroom.play("spring")
 					return
+		if im["jump"] and (is_on_floor() or frames_since_on_floor <= coyote_time_limit):
 			velocity.y = -jump_power
 			jump_frames = jump_duration #may need to add to shroom bit
 		else:

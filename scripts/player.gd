@@ -40,7 +40,9 @@ var coyote_time_limit     := 4
 #wall jump cooldown
 var wall_jump_cooldown := 10
 
+#springshroom related stuff
 var shroom_jump_radius := 40;
+var springshrooms := []
 
 var mod_values = {
 	"crouching" : 0.6,
@@ -48,10 +50,18 @@ var mod_values = {
 	"shroom_jump": 1.5,
 }
 
-func check_bound(lower, upper, num, equal=false):
-	return lower >= num <= upper if equal else lower > num < upper
+func _ready():
+	shroom_jump_radius *= shroom_jump_radius #for faster distance calculations due to no need for square roots
+	for shroom in get_tree().get_nodes_in_group("springshroom"):
+		springshrooms.append(shroom)
 
-func animate():
+func cap(value, min_val, max_val): #may be brokens
+	value = min(value, max_val) if max_val else value
+	value = max(value, min_val) if min_val else value
+	return value
+
+func animate(): #could prbly optimise
+	$AnimatedSprite2D.flip_h = dir.x < 0 if dir.x != 0 else $AnimatedSprite2D.flip_h
 	var animation = ""
 	if $timers/sleep.is_stopped():
 		animation = "sleeping"
@@ -62,21 +72,15 @@ func animate():
 	elif climbing:
 		animation = "climbing"
 	elif land_frames > 0:
-		$AnimatedSprite2D.flip_h = dir.x < 0 if dir.x != 0 else $AnimatedSprite2D.flip_h
 		$AnimatedSprite2D.play("jumping")
-		$AnimatedSprite2D.pause()
 		$AnimatedSprite2D.frame = 6
 		return
 	elif jump_frames > 0:
-		$AnimatedSprite2D.flip_h = dir.x < 0 if dir.x != 0 else $AnimatedSprite2D.flip_h
 		$AnimatedSprite2D.play("jumping")
-		$AnimatedSprite2D.pause()
 		$AnimatedSprite2D.frame = 2
 		return
 	elif not is_on_floor():
-		$AnimatedSprite2D.flip_h = dir.x < 0 if dir.x != 0 else $AnimatedSprite2D.flip_h
 		$AnimatedSprite2D.play("jumping")
-		$AnimatedSprite2D.pause()
 		if velocity.y < -100:
 			$AnimatedSprite2D.frame = 3
 		elif velocity.y < 0:
@@ -87,7 +91,6 @@ func animate():
 	else:
 		animation = "running" if dir.x and not $body/ShapeCast2D.is_colliding() else "idle"
 		
-	$AnimatedSprite2D.flip_h = dir.x < 0 if dir.x != 0 else $AnimatedSprite2D.flip_h
 	$AnimatedSprite2D.play(animation)
 
 func toggle_crouch():
@@ -111,8 +114,8 @@ func update_stamina(delta):
 			stamina -= stamina_drain_climb * delta
 		else:
 			stamina -= stamina_drain_grip * delta
-		if stamina < 0:
-			stamina = 0
+			
+		stamina = cap(stamina, 0, null) #may be broken
 
 func force_state_update():
 	if not is_on_floor():
@@ -133,11 +136,10 @@ func climb(im):
 		wall_jump_cooldown = 15
 		jump_frames = jump_duration
 		stamina -= stamina_cost_wall_jump
-		if stamina < 0:
-			stamina = 0
-		var ratio = stamina / stamina_cost_wall_jump
-		if ratio > 1.0:
-			ratio = 1.0
+		stamina = cap(stamina, 0, null) #may be broken
+
+		var ratio = cap(stamina / stamina_cost_wall_jump, null, 1.0) #may be broken
+
 		velocity.x = dir.x * speed if dir.x else velocity.x
 		velocity.y = -jump_power * ratio
 	elif dir.y:
@@ -166,17 +168,17 @@ func get_input():
 		"jump"  : Input.is_action_just_pressed("jump")
 	}
 
-	if im["jump"]: #springshroom jump logic
-		for shroom in get_tree().get_nodes_in_group("springshroom"): #could optimise using different nodes
-			if position.distance_to(shroom.position) <= shroom_jump_radius:
-				velocity.y = -jump_power * mod_values["shroom_jump"]
-				shroom.play("spring")
-	elif im["climb"] and $body/ShapeCast2D.is_colliding() and wall_jump_cooldown <= 0 and not $head/ShapeCast2D.is_colliding():
+	if im["climb"] and $body/ShapeCast2D.is_colliding() and wall_jump_cooldown <= 0 and not $head/ShapeCast2D.is_colliding():
 		climb(im)
 	elif not $head/ShapeCast2D.is_colliding(): #dont allow certain things if head is clipped
 		if im["jump"] and (is_on_floor() or frames_since_on_floor <= coyote_time_limit):
+			for shroom in springshrooms: #could optimise using different nodes
+				if position.distance_squared_to(shroom.position) <= shroom_jump_radius:
+					velocity.y = -jump_power * mod_values["shroom_jump"]
+					shroom.play("spring")
+					return
 			velocity.y = -jump_power
-			jump_frames = jump_duration
+			jump_frames = jump_duration #may need to add to shroom bit
 		else:
 			crouching = im["down"] and is_on_floor() and not im["climb"]
 
@@ -212,13 +214,9 @@ func _physics_process(delta: float) -> void:
 	animate()
 	was_on_floor = is_on_floor()
 
-	if land_frames > 0:
-		land_frames -= 1
-	if jump_frames > 0:
-		jump_frames -= 1
-
-	if wall_jump_cooldown > 0:
-		wall_jump_cooldown -= 1
+	land_frames = land_frames - 1 if land_frames > 0 else land_frames
+	jump_frames = jump_frames - 1 if jump_frames > 0 else jump_frames
+	wall_jump_cooldown = wall_jump_cooldown - 1 if wall_jump_cooldown > 0 else wall_jump_cooldown
 
 #camera values:
 # left: 0

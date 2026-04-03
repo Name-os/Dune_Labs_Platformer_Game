@@ -40,9 +40,12 @@ var coyote_time_limit     := 4
 #wall jump cooldown
 var wall_jump_cooldown := 10
 
+var shroom_jump_radius := 40;
+
 var mod_values = {
 	"crouching" : 0.6,
-	"climb"     : 1.5
+	"climb"     : 1.5,
+	"shroom_jump": 1.5,
 }
 
 func check_bound(lower, upper, num, equal=false):
@@ -93,9 +96,12 @@ func toggle_crouch():
 	$head.position.x = (-1.0 if dir.x < 0 else 3.0) if dir.x != 0 else $head.position.x
 
 func update_timers():
-	if dir or climbing:
+	if dir or climbing or velocity.y != 0:
 		$timers/sit.start()
 		$timers/sleep.start()
+		
+	#for timer debugging		
+	#print(str($timers/sit.time_left) + "   " + str($timers/sleep.time_left))
 	
 func update_stamina(delta):
 	if is_on_floor():
@@ -160,9 +166,14 @@ func get_input():
 		"jump"  : Input.is_action_just_pressed("jump")
 	}
 
-	if im["climb"] and $body/ShapeCast2D.is_colliding() and wall_jump_cooldown <= 0 and not $head/ShapeCast2D.is_colliding():
+	if im["jump"]: #springshroom jump logic
+		for shroom in get_tree().get_nodes_in_group("springshroom"): #could optimise using different nodes
+			if position.distance_to(shroom.position) <= shroom_jump_radius:
+				velocity.y = -jump_power * mod_values["shroom_jump"]
+				shroom.play("spring")
+	elif im["climb"] and $body/ShapeCast2D.is_colliding() and wall_jump_cooldown <= 0 and not $head/ShapeCast2D.is_colliding():
 		climb(im)
-	elif not $head/ShapeCast2D.is_colliding():
+	elif not $head/ShapeCast2D.is_colliding(): #dont allow certain things if head is clipped
 		if im["jump"] and (is_on_floor() or frames_since_on_floor <= coyote_time_limit):
 			velocity.y = -jump_power
 			jump_frames = jump_duration

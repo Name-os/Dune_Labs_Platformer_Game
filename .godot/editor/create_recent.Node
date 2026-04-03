@@ -1,7 +1,7 @@
+AnimatedSprite2D
+Sprite2D
 ShapeCast2D
 TileMapLayer
-Sprite2D
-AnimatedSprite2D
 PointLight2D
 DirectionalLight2D
 Node2D

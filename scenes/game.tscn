@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cgjwy3ime4wpi" path="res://scenes/cip.tscn" id="9_vtaks"]
 [ext_resource type="PackedScene" uid="uid://dlayctgpsy3nv" path="res://scenes/blue_fireflies.tscn" id="10_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://cfrwpoub4o4v2" path="res://scenes/shade.tscn" id="10_trtic"]
+[ext_resource type="PackedScene" uid="uid://dntsbnr0ip1w1" path="res://scenes/springshroom.tscn" id="15_ir15t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trtic"]
 texture = ExtResource("1_0tnpc")
@@ -2186,3 +2187,6 @@ zoom = Vector2(1.5, 1.5)
 color = Color(0.2087101, 0.2087102, 0.2087099, 1)
 energy = 3.8
 blend_mode = 1
+
+[node name="springshroom" parent="." unique_id=950917899 instance=ExtResource("15_ir15t")]
+position = Vector2(-480, 739)

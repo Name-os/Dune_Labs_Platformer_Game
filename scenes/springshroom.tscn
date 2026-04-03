@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dntsbnr0ip1w1"]
+
+[ext_resource type="Texture2D" uid="uid://c3g33gplhp5lm" path="res://assets/images/spritesheets/other/Springshroom.png" id="1_onbyu"]
+[ext_resource type="Script" uid="uid://bwk0anl5hl55f" path="res://scripts/springshroom.gd" id="2_uc73p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uc73p"]
+atlas = ExtResource("1_onbyu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_me54d"]
+atlas = ExtResource("1_onbyu")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgrfd"]
+atlas = ExtResource("1_onbyu")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw27s"]
+atlas = ExtResource("1_onbyu")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uljj"]
+atlas = ExtResource("1_onbyu")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gk4o"]
+atlas = ExtResource("1_onbyu")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqfds"]
+atlas = ExtResource("1_onbyu")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bowp5"]
+atlas = ExtResource("1_onbyu")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jebit"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uc73p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_me54d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgrfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw27s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uljj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gk4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqfds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bowp5")
+}],
+"loop": false,
+"name": &"spring",
+"speed": 20.0
+}]
+
+[node name="springshroom" type="AnimatedSprite2D" unique_id=933085558 groups=["springshroom"]]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_jebit")
+animation = &"spring"
+frame = 7
+frame_progress = 1.0
+script = ExtResource("2_uc73p")

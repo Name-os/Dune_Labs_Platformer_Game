@@ -486,7 +486,7 @@ shape = SubResource("RectangleShape2D_qlg0r")
 [node name="ShapeCast2D" type="ShapeCast2D" parent="body" unique_id=48215455]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_3v2ag")
-target_position = Vector2(0, 0)
+target_position = Vector2(0, -10)
 
 [node name="head" type="CollisionShape2D" parent="." unique_id=1592994112]
 position = Vector2(-1, 4)

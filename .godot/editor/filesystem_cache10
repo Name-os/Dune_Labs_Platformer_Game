@@ -1,81 +1,81 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1775263779
-changelog.txt::TextFile::-1::1774930669::0::1::::<><><>0<>0<><>::
-export_presets.cfg::TextFile::-1::1774930669::0::1::::<><><>0<>0<><>::
-to do list.txt::TextFile::-1::1774930669::0::1::::<><><>0<>0<><>::
-::res://assets/::1774930669
-::res://assets/audio/::1774930669
-::res://assets/audio/music/::1774930669
-placeholder.txt::TextFile::-1::1774930669::0::1::::<><><>0<>0<><>::
-::res://assets/audio/sfx/::1774930669
-placeholder.txt::TextFile::-1::1774930669::0::1::::<><><>0<>0<><>::
-::res://assets/images/::1774930669
-::res://assets/images/other/::1774930733
-main.png::CompressedTexture2D::2331623071922391115::1774930669::1774930733::1::::<><><>0<>0<>0b161d9dfdee5966c3bddb81ec6ddc90<>res://.godot/imported/main.png-6efa38a12c36ea9b79b482111d0959b0.ctex::
-::res://assets/images/spritesheets/::1775073718
-::res://assets/images/spritesheets/Cips and Relics/::1774930733
-Cip-Sheet.png::CompressedTexture2D::2864714953562850067::1774930669::1774930733::1::::<><><>0<>0<>9bcfcd91878e9436567cc0fd8361ac16<>res://.godot/imported/Cip-Sheet.png-e6fe3341f9ef307b4a17d40c7c6b6bc1.ctex::
-::res://assets/images/spritesheets/Enemies/::1775265458
-Blue Firefly Glow.png::CompressedTexture2D::5908505480804440803::1774930669::1774930733::1::::<><><>0<>0<>522289e0b0a23234af0c6d1dc6fd79a7<>res://.godot/imported/Blue Firefly Glow.png-834ee8a44ed6398d0d01316bb9e86e99.ctex::
-Blue Firefly-Sheet.png::CompressedTexture2D::6801448106726825240::1774930669::1774930733::1::::<><><>0<>0<>917624e86c8074715e1579be00ebf2f6<>res://.godot/imported/Blue Firefly-Sheet.png-9db433612d0ef71a05a64f12566a4b87.ctex::
-Fireflies 2-Sheet.png::CompressedTexture2D::6853594451329622555::1774930669::1774930733::1::::<><><>0<>0<>104e092c8d2d448cd0a3abe71dad7d8b<>res://.godot/imported/Fireflies 2-Sheet.png-a35fa775ed274f291341cc28f662edfc.ctex::
-Fireflies 3-Sheet.png::CompressedTexture2D::5071968974137197260::1774930669::1774930733::1::::<><><>0<>0<>dff024ecdefb614ba70d0ecd4421e5bc<>res://.godot/imported/Fireflies 3-Sheet.png-bb7c280769e7ce70c1cc787834a7e3f5.ctex::
-Firefly Light.png::CompressedTexture2D::2353792882361832799::1774930669::1774930733::1::::<><><>0<>0<>09eeef88f126d66ee12832882249a801<>res://.godot/imported/Firefly Light.png-fda69bc980169ece4d78c79ccbcec172.ctex::
-shade Idle-Sheet.png::CompressedTexture2D::582244685525828203::1774930669::1774930733::1::::<><><>0<>0<>81044335b0de23477c516f3cbcd3ba8c<>res://.godot/imported/shade Idle-Sheet.png-6d7def295a2fbf74d0b8d769277859f9.ctex::
-Shade Running-Sheet.png::CompressedTexture2D::3766685774688617949::1774930669::1774930733::1::::<><><>0<>0<>4bf724cac6f14bf0987ee570b599b48c<>res://.godot/imported/Shade Running-Sheet.png-a94c84bff543bba2d1f0275cbe1b45a8.ctex::
-Shrub Turn-Sheet.png::CompressedTexture2D::1966430328670920885::1775265458::1775265459::1::::<><><>0<>0<>673e1caf854bf3df0b4121dbb56ee202<>res://.godot/imported/Shrub Turn-Sheet.png-68c0b5c91dd60b4bbdf97facb354e7ea.ctex::
-Shrub-Sheet.png::CompressedTexture2D::8698655967108935829::1775264204::1775264204::1::::<><><>0<>0<>55c4f2d02ea7e13bc4664a5c64004209<>res://.godot/imported/Shrub-Sheet.png-35c5e94441c7c9fb184382ad8d7c4d2d.ctex::
-::res://assets/images/spritesheets/other/::1775101049
-Springshroom.png::CompressedTexture2D::6752265672624201346::1775073718::1775101049::1::::<><><>0<>0<>9d725195eabf31ae75c65a9e9c1cb6b6<>res://.godot/imported/Springshroom.png-e6591f8531497a6ae6e3d55166c2f5c8.ctex::
-::res://assets/images/spritesheets/player_cat/::1774930733
-climbing.png::CompressedTexture2D::2701241306712447594::1774930669::1774930733::1::::<><><>0<>0<>c9ac4828cdb06389ccee5dc27570cd46<>res://.godot/imported/climbing.png-7a526cd326152cbb0135915405290e83.ctex::
-crouching_idle.png::CompressedTexture2D::8525168515025138577::1774930669::1774930733::1::::<><><>0<>0<>75bb99114642ecb3d2e4a036a1856c60<>res://.godot/imported/crouching_idle.png-b093288d3c13222edb50cdf968105924.ctex::
-crouching_running.png::CompressedTexture2D::6107821278145220786::1774930669::1774930733::1::::<><><>0<>0<>652c0a68b838ebaef531c4cd6f167a82<>res://.godot/imported/crouching_running.png-485301fca2acf47c3fb7f36a147f7129.ctex::
-devourer.png::CompressedTexture2D::3710511521684739199::1774930669::1774930733::1::::<><><>0<>0<>2b4f38ac148e7561e44613a68378cd01<>res://.godot/imported/devourer.png-a9b9d954492dfbe4b9fb7920e6f52092.ctex::
-ide_to_sit.png::CompressedTexture2D::1554839951054842918::1774930669::1774930733::1::::<><><>0<>0<>03ea8ce833c5a9943101fe635e67f4e0<>res://.godot/imported/ide_to_sit.png-af07134de121a22cf3e9ea98c5e4c770.ctex::
-idle.png::CompressedTexture2D::7123287562785199602::1774930669::1774930733::1::::<><><>0<>0<>c53ba3c360abe6de8ba0eef67ab6cdb9<>res://.godot/imported/idle.png-fbc4c589934c44c86d688878b41daea5.ctex::
-jumping.png::CompressedTexture2D::1556877177083346705::1774930669::1774930733::1::::<><><>0<>0<>c83cdd466e12627162275e153176b483<>res://.godot/imported/jumping.png-493003ce71303f94bd0ead794c5cc88c.ctex::
-running.png::CompressedTexture2D::3131651077541606604::1774930669::1774930733::1::::<><><>0<>0<>3e8dc48268c0e649b6449218ddf35689<>res://.godot/imported/running.png-139c573f94c3542974b039ae5ec0fdbc.ctex::
-sitting.png::CompressedTexture2D::364537988140739223::1774930669::1774930732::1::::<><><>0<>0<>a063cc1d4d9d545cafaf8b8814788903<>res://.godot/imported/sitting.png-bb0ae1f96ad95cc5b75c6fbd87026dd2.ctex::
-sleeping.png::CompressedTexture2D::6033110159256474552::1774930669::1774930732::1::::<><><>0<>0<>72e9b17767d89ceb00685596a18068b9<>res://.godot/imported/sleeping.png-ed67767411eef1d9cfda1df2b45fac3c.ctex::
-waking.png::CompressedTexture2D::7301692845256039346::1774930669::1774930732::1::::<><><>0<>0<>0e98bc57f2a9c847bdb4c98081ddf2a3<>res://.godot/imported/waking.png-82eedbf792e90200cc48cb4c3a5fca99.ctex::
-::res://assets/images/tilesets/::1774930733
-Ancient Monument Details.png::CompressedTexture2D::1634690369693562569::1774930669::1774930732::1::::<><><>0<>0<>568252afb9fc051c0e5999e637c3b68b<>res://.godot/imported/Ancient Monument Details.png-5e27426aa9ec6d6bc24b34c2a9bfc797.ctex::
-Ancient Monument Tileset.png::CompressedTexture2D::6502287532777801235::1774930669::1774930733::1::::<><><>0<>0<>fe7d1a77510e3eaa74c958efaede8526<>res://.godot/imported/Ancient Monument Tileset.png-4f7499a72c49f97b2c0e594f33bb1935.ctex::
-background_color.png::CompressedTexture2D::608284713645808412::1774930669::1774930732::1::::<><><>0<>0<>0efe2f3aefeb9e7ce88c57b224fd66ea<>res://.godot/imported/background_color.png-745dc6cc9d503c068726a5deca4a6bf7.ctex::
-collision.svg::CompressedTexture2D::1533667773256361448::1774930669::1774930733::1::::<><><>0<>0<>87ad45d81bf1c0692dd40d0b3fb7c516<>res://.godot/imported/collision.svg-793453e9e7a84150a22483ec477bd797.ctex::
-Firefly Forest Background Details.png::CompressedTexture2D::6967705099904926307::1774930669::1774930732::1::::<><><>0<>0<>ae541f177d89a1e0f83f20325d2a807f<>res://.godot/imported/Firefly Forest Background Details.png-c9647445a593a5df6e33cb5ebdea11e3.ctex::
-Firefly Forest Background Tileset.png::CompressedTexture2D::6894659872229405764::1774930669::1774930732::1::::<><><>0<>0<>aa32287a56eabad4803360d8fd606fe2<>res://.godot/imported/Firefly Forest Background Tileset.png-3b2b3be9a8c51b9be4535e1f7d81a2da.ctex::
-Firefly Forest Background.png::CompressedTexture2D::8974448103933865393::1774930669::1774930733::1::::<><><>0<>0<>8b648004d6b11368f01a7258da3ac852<>res://.godot/imported/Firefly Forest Background.png-6fd195d7df766c20f528dc8c4bfeb37c.ctex::
-Firefly Forest Hazard.png::CompressedTexture2D::6227462641969852072::1774930669::1774930733::1::::<><><>0<>0<>c32984a1b330a662ee67b37c4e0ff767<>res://.godot/imported/Firefly Forest Hazard.png-8b3e1164cfb16498d43752dadf72acf6.ctex::
-Firefly Forest Tileset Overlay.png::CompressedTexture2D::3614631207617595118::1774930669::1774930733::1::::<><><>0<>0<>68d1832ba3f46d3017d2ff16b0bb9d2e<>res://.godot/imported/Firefly Forest Tileset Overlay.png-59d7d2f4d0b83a54b915965fd86cff8a.ctex::
-testing_block.png::CompressedTexture2D::8599966409789383999::1774930669::1774930733::1::::<><><>0<>0<>0e1e86ef04518e5d385c4e6f564203b8<>res://.godot/imported/testing_block.png-58b1f256d396c86d979d655e98fdac0b.ctex::
-::res://assets/unused assets/::1774930733
-Cat Climbing1.png::CompressedTexture2D::1809484551354410470::1774930669::1774930733::1::::<><><>0<>0<>07b875f77b9afcd7f67c92d7baeb448a<>res://.godot/imported/Cat Climbing1.png-caf6a3c7ac7da23f85b264acd4c703bd.ctex::
-Cat Climbing2.png::CompressedTexture2D::7592959482077657614::1774930669::1774930733::1::::<><><>0<>0<>949be76c3eb0ba1864482ca12dbc982e<>res://.godot/imported/Cat Climbing2.png-c64f128e18e6450495b21d3f7c375517.ctex::
-Cat Climbing3.png::CompressedTexture2D::6357034193493731488::1774930669::1774930733::1::::<><><>0<>0<>776b581ac280d7189122f9e56b6853e4<>res://.godot/imported/Cat Climbing3.png-0806212aeec81f6936326ee367642cb2.ctex::
-Cat Climbing4.png::CompressedTexture2D::2006253779984430471::1774930669::1774930733::1::::<><><>0<>0<>e70181cdc6b60a4da3abfe134a065241<>res://.godot/imported/Cat Climbing4.png-e185e14e4b530c02bce09b78ac355130.ctex::
-character_body_2d.tscn::PackedScene::216098170030787172::1774930669::0::1::::<><><>0<>0<><>::uid://bycl6bey1imp6::::res://character_body_2d.gd<>uid://ci4slpjml7uv6::::res://Cat-idle-spritesheet.png<>uid://ttbs1bstpyit::::res://animated_sprite_2d.gd
-node_2d.tscn::PackedScene::5092543218647723544::1774930669::0::1::::<><><>0<>0<><>::uid://chq7r33bt1iyo::::res://Dune Labs Forest Scene.svg<>uid://ck8gte0wx3dvk::::res://Screenshot 2026-03-04 034218.png<>uid://cl8c74bnvng6f::::res://Dune Labs Forest Scene Overlay.svg<>uid://ci4slpjml7uv6::::res://Cat-idle-spritesheet.png<>uid://bycl6bey1imp6::::res://character_body_2d.gd<>uid://c3ch5e6yd6ci7::::res://Cat Running Spritesheet.png<>uid://ttbs1bstpyit::::res://animated_sprite_2d.gd<>uid://sddbx27p06rt::::res://node_2d.gdshader<>uid://cipkqflss3fqy::::res://overlay.gd
-Tiles and stuff.tscn::PackedScene::7474033460987304118::1774930669::0::1::::<><><>0<>0<><>::uid://ck8gte0wx3dvk::::res://Screenshot 2026-03-04 034218.png<>uid://chq7r33bt1iyo::::res://Dune Labs Forest Scene.svg<>uid://cl8c74bnvng6f::::res://Dune Labs Forest Scene Overlay.svg<>uid://bycl6bey1imp6::::res://character_body_2d.gd<>uid://dny7ceqdfyu0e::::res://Cat Climbing1.png<>uid://ci4slpjml7uv6::::res://Cat-idle-spritesheet.png<>uid://c3ch5e6yd6ci7::::res://Cat Running Spritesheet.png<>uid://ex7k8cx3p4o8::::res://Cat Climbing2.png<>uid://cla14bhc4vlo1::::res://Cat Climbing3.png<>uid://ttbs1bstpyit::::res://animated_sprite_2d.gd<>uid://dugx8k1m71woo::::res://Cat Climbing4.png<>uid://d2j1sbksur0ci::::res://Cat Jumping Animation-Sheet.png
-::res://gdextentions/::1775104582
-::res://gdextentions/godot-cpp/::1775104582
-::res://scenes/::1775261493
-blue_fireflies.tscn::PackedScene::7932801118430905087::1774930669::0::1::::<><><>0<>0<><>::uid://8hpqx8vs3188::::res://assets/images/other/main.png<>uid://deana7sgajwt8::::res://scripts/blue_fireflies.gd<>uid://c35w4eil3t0ho::::res://assets/images/spritesheets/Enemies/Blue Firefly-Sheet.png<>uid://cqgehswqr7reh::::res://assets/images/spritesheets/Enemies/Blue Firefly Glow.png
-cip.tscn::PackedScene::5213933945459489670::1774930669::0::1::::<><><>0<>0<><>::uid://elwjyd6p31fs::::res://scripts/cip.gd<>uid://bg2xo343ghw4j::::res://assets/images/spritesheets/Cips and Relics/Cip-Sheet.png<>uid://8hpqx8vs3188::::res://assets/images/other/main.png
-fireflies.tscn::PackedScene::575710550618044371::1774930669::0::1::::<><><>0<>0<><>::uid://bdi2sea7mv5mf::::res://scripts/firefly.gd<>uid://8sgvimim3k2b::::res://assets/images/spritesheets/Enemies/Firefly Light.png<>uid://8hpqx8vs3188::::res://assets/images/other/main.png<>uid://cei5t8x78c3o7::::res://assets/images/spritesheets/Enemies/Fireflies 3-Sheet.png
-game.gdshader::Shader::6082102547220360705::1775260711::0::1::::<><><>0<>0<><>::
-game.tscn::PackedScene::8183729580308332318::1775261493::0::1::::<><><>0<>0<><>::uid://d04j34stsu7ar::::res://assets/images/tilesets/Firefly Forest Background.png<>uid://c5h3bnesx3d2s::::res://assets/images/tilesets/Firefly Forest Background Tileset.png<>uid://c6ds72j6jakd7::::res://scenes/player.tscn<>uid://v36jwqnbnsw3::::res://assets/images/tilesets/collision.svg<>uid://c6jhc5i44rp6r::::res://assets/images/tilesets/Firefly Forest Background Details.png<>uid://cuyvnuiqdhqs3::::res://assets/images/tilesets/Firefly Forest Hazard.png<>uid://cyv0yw4xjpvtr::::res://assets/images/tilesets/Ancient Monument Tileset.png<>uid://xj4d17wo5v8d::::res://assets/images/tilesets/Ancient Monument Details.png<>uid://dur5gp8qvehsp::::res://assets/images/tilesets/testing_block.png<>uid://brq7ph0xfqady::::res://assets/images/tilesets/Firefly Forest Tileset Overlay.png<>uid://ig44sfwx8rxj::::res://scenes/fireflies.tscn<>uid://cswhlto8fy3r6::::res://scenes/game.gdshader<>uid://cgjwy3ime4wpi::::res://scenes/cip.tscn<>uid://dlayctgpsy3nv::::res://scenes/blue_fireflies.tscn<>uid://cfrwpoub4o4v2::::res://scenes/shade.tscn<>uid://dpo1o82wp4u14::::res://scripts/foreground.gd<>uid://dntsbnr0ip1w1::::res://scenes/Springshroom.tscn<>uid://bgs83f6154ahs::::res://scenes/Shrub.tscn
-player.tscn::PackedScene::6956040138156368862::1775247369::0::1::::<><><>0<>0<><>::uid://c8qtrgjtkbiw5::::res://assets/images/spritesheets/player_cat/idle.png<>uid://do62elngv6cn7::::res://scripts/player.gd<>uid://dtpwjrtgedemr::::res://assets/images/spritesheets/player_cat/crouching_idle.png<>uid://beqrbxobqe6x7::::res://assets/images/spritesheets/player_cat/climbing.png<>uid://wgfsl3fwff7v::::res://assets/images/spritesheets/player_cat/jumping.png<>uid://bku83ocvth5y3::::res://assets/images/spritesheets/player_cat/running.png<>uid://ctaw6oik8r1ow::::res://assets/images/spritesheets/player_cat/crouching_running.png<>uid://wff8s1ladlac::::res://assets/images/spritesheets/player_cat/ide_to_sit.png<>uid://cr7qpb70f8oh1::::res://assets/images/spritesheets/player_cat/sleeping.png<>uid://fgt5f3ti7llv::::res://assets/images/spritesheets/player_cat/sitting.png<>uid://dca82xoa4wkw5::::res://assets/images/spritesheets/player_cat/waking.png<>uid://8hpqx8vs3188::::res://assets/images/other/main.png
-shade.tscn::PackedScene::5160243334452579897::1774930669::0::1::::<><><>0<>0<><>::uid://dc0r6k866do1g::::res://scripts/shade.gd<>uid://ikbqqswesk6v::::res://assets/images/spritesheets/Enemies/shade Idle-Sheet.png<>uid://btwu08vteoqgb::::res://assets/images/spritesheets/Enemies/Shade Running-Sheet.png
-Shrub.tscn::PackedScene::2846766519813240520::1775261382::0::1::::<><><>0<>0<><>::uid://dv6xufm5tneqn::::res://assets/images/spritesheets/Enemies/Shrub-Sheet.png<>uid://cprnxvpsfh8ub::::res://scripts/shrub.gd
-Springshroom.tscn::PackedScene::8112035597576984774::1775248710::0::1::::<><><>0<>0<><>::uid://c3g33gplhp5lm::::res://assets/images/spritesheets/other/Springshroom.png<>uid://bwk0anl5hl55f::::res://scripts/springshroom.gd
-::res://scripts/::1775264409
-blue_fireflies.gd::GDScript::7440808455364073223::1774930669::0::1::::<>Node2D<><>0<>0<><>::
-cip.gd::GDScript::304816642457283988::1774930669::0::1::::<>Node2D<><>0<>0<><>::
-firefly.gd::GDScript::2615173951298889725::1774930669::0::1::::<>Node2D<><>0<>0<><>::
-foreground.gd::GDScript::8242601413134284601::1775251140::0::1::::<>TileMapLayer<><>0<>0<><>::
-player.gd::GDScript::8207548672509129514::1775248211::0::1::::<>CharacterBody2D<><>0<>0<><>::
-shade.gd::GDScript::7352337308357050714::1774930669::0::1::::<>CharacterBody2D<><>0<>0<><>::
-shrub.gd::GDScript::5861599964928733237::1775264409::0::1::::<>CharacterBody2D<><>0<>0<><>::
-springshroom.gd::GDScript::3952737647258858433::1775247369::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
+::res://::1775290129
+changelog.txt::TextFile::-1::1775247173::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1775247173::0::1::::<><><>0<>0<><>::
+to do list.txt::TextFile::-1::1775247173::0::1::::<><><>0<>0<><>::
+::res://assets/::1775247173
+::res://assets/audio/::1775247173
+::res://assets/audio/music/::1775247173
+placeholder.txt::TextFile::-1::1775247173::0::1::::<><><>0<>0<><>::
+::res://assets/audio/sfx/::1775247173
+placeholder.txt::TextFile::-1::1775247173::0::1::::<><><>0<>0<><>::
+::res://assets/images/::1775247173
+::res://assets/images/other/::1775247202
+main.png::CompressedTexture2D::2331623071922391115::1775247173::1775247202::1::::<><><>0<>0<>0b161d9dfdee5966c3bddb81ec6ddc90<>res://.godot/imported/main.png-6efa38a12c36ea9b79b482111d0959b0.ctex::
+::res://assets/images/spritesheets/::1775247173
+::res://assets/images/spritesheets/Cips and Relics/::1775247202
+Cip-Sheet.png::CompressedTexture2D::2864714953562850067::1775247173::1775247202::1::::<><><>0<>0<>9bcfcd91878e9436567cc0fd8361ac16<>res://.godot/imported/Cip-Sheet.png-e6fe3341f9ef307b4a17d40c7c6b6bc1.ctex::
+::res://assets/images/spritesheets/Enemies/::1775290092
+Blue Firefly Glow.png::CompressedTexture2D::5908505480804440803::1775247173::1775247202::1::::<><><>0<>0<>522289e0b0a23234af0c6d1dc6fd79a7<>res://.godot/imported/Blue Firefly Glow.png-834ee8a44ed6398d0d01316bb9e86e99.ctex::
+Blue Firefly-Sheet.png::CompressedTexture2D::6801448106726825240::1775247173::1775247202::1::::<><><>0<>0<>917624e86c8074715e1579be00ebf2f6<>res://.godot/imported/Blue Firefly-Sheet.png-9db433612d0ef71a05a64f12566a4b87.ctex::
+Fireflies 2-Sheet.png::CompressedTexture2D::6853594451329622555::1775247173::1775247202::1::::<><><>0<>0<>104e092c8d2d448cd0a3abe71dad7d8b<>res://.godot/imported/Fireflies 2-Sheet.png-a35fa775ed274f291341cc28f662edfc.ctex::
+Fireflies 3-Sheet.png::CompressedTexture2D::5071968974137197260::1775247173::1775247202::1::::<><><>0<>0<>dff024ecdefb614ba70d0ecd4421e5bc<>res://.godot/imported/Fireflies 3-Sheet.png-bb7c280769e7ce70c1cc787834a7e3f5.ctex::
+Firefly Light.png::CompressedTexture2D::2353792882361832799::1775247173::1775247202::1::::<><><>0<>0<>09eeef88f126d66ee12832882249a801<>res://.godot/imported/Firefly Light.png-fda69bc980169ece4d78c79ccbcec172.ctex::
+shade Idle-Sheet.png::CompressedTexture2D::582244685525828203::1775247173::1775247202::1::::<><><>0<>0<>81044335b0de23477c516f3cbcd3ba8c<>res://.godot/imported/shade Idle-Sheet.png-6d7def295a2fbf74d0b8d769277859f9.ctex::
+Shade Running-Sheet.png::CompressedTexture2D::3766685774688617949::1775247173::1775247202::1::::<><><>0<>0<>4bf724cac6f14bf0987ee570b599b48c<>res://.godot/imported/Shade Running-Sheet.png-a94c84bff543bba2d1f0275cbe1b45a8.ctex::
+Shrub Turn-Sheet.png::CompressedTexture2D::1966430328670920885::1775290092::1775290132::1::::<><><>0<>0<>673e1caf854bf3df0b4121dbb56ee202<>res://.godot/imported/Shrub Turn-Sheet.png-68c0b5c91dd60b4bbdf97facb354e7ea.ctex::
+Shrub-Sheet.png::CompressedTexture2D::8698655967108935829::1775290092::1775290132::1::::<><><>0<>0<>55c4f2d02ea7e13bc4664a5c64004209<>res://.godot/imported/Shrub-Sheet.png-35c5e94441c7c9fb184382ad8d7c4d2d.ctex::
+::res://assets/images/spritesheets/other/::1775247202
+Springshroom.png::CompressedTexture2D::6752265672624201346::1775247173::1775247202::1::::<><><>0<>0<>9d725195eabf31ae75c65a9e9c1cb6b6<>res://.godot/imported/Springshroom.png-e6591f8531497a6ae6e3d55166c2f5c8.ctex::
+::res://assets/images/spritesheets/player_cat/::1775247202
+climbing.png::CompressedTexture2D::2701241306712447594::1775247173::1775247202::1::::<><><>0<>0<>c9ac4828cdb06389ccee5dc27570cd46<>res://.godot/imported/climbing.png-7a526cd326152cbb0135915405290e83.ctex::
+crouching_idle.png::CompressedTexture2D::8525168515025138577::1775247173::1775247202::1::::<><><>0<>0<>75bb99114642ecb3d2e4a036a1856c60<>res://.godot/imported/crouching_idle.png-b093288d3c13222edb50cdf968105924.ctex::
+crouching_running.png::CompressedTexture2D::6107821278145220786::1775247173::1775247202::1::::<><><>0<>0<>652c0a68b838ebaef531c4cd6f167a82<>res://.godot/imported/crouching_running.png-485301fca2acf47c3fb7f36a147f7129.ctex::
+devourer.png::CompressedTexture2D::3710511521684739199::1775247173::1775247202::1::::<><><>0<>0<>2b4f38ac148e7561e44613a68378cd01<>res://.godot/imported/devourer.png-a9b9d954492dfbe4b9fb7920e6f52092.ctex::
+ide_to_sit.png::CompressedTexture2D::1554839951054842918::1775247173::1775247202::1::::<><><>0<>0<>03ea8ce833c5a9943101fe635e67f4e0<>res://.godot/imported/ide_to_sit.png-af07134de121a22cf3e9ea98c5e4c770.ctex::
+idle.png::CompressedTexture2D::7123287562785199602::1775247173::1775247202::1::::<><><>0<>0<>c53ba3c360abe6de8ba0eef67ab6cdb9<>res://.godot/imported/idle.png-fbc4c589934c44c86d688878b41daea5.ctex::
+jumping.png::CompressedTexture2D::1556877177083346705::1775247173::1775247202::1::::<><><>0<>0<>c83cdd466e12627162275e153176b483<>res://.godot/imported/jumping.png-493003ce71303f94bd0ead794c5cc88c.ctex::
+running.png::CompressedTexture2D::3131651077541606604::1775247173::1775247202::1::::<><><>0<>0<>3e8dc48268c0e649b6449218ddf35689<>res://.godot/imported/running.png-139c573f94c3542974b039ae5ec0fdbc.ctex::
+sitting.png::CompressedTexture2D::364537988140739223::1775247173::1775247201::1::::<><><>0<>0<>a063cc1d4d9d545cafaf8b8814788903<>res://.godot/imported/sitting.png-bb0ae1f96ad95cc5b75c6fbd87026dd2.ctex::
+sleeping.png::CompressedTexture2D::6033110159256474552::1775247173::1775247201::1::::<><><>0<>0<>72e9b17767d89ceb00685596a18068b9<>res://.godot/imported/sleeping.png-ed67767411eef1d9cfda1df2b45fac3c.ctex::
+waking.png::CompressedTexture2D::7301692845256039346::1775247173::1775247201::1::::<><><>0<>0<>0e98bc57f2a9c847bdb4c98081ddf2a3<>res://.godot/imported/waking.png-82eedbf792e90200cc48cb4c3a5fca99.ctex::
+::res://assets/images/tilesets/::1775247201
+Ancient Monument Details.png::CompressedTexture2D::1634690369693562569::1775247173::1775247201::1::::<><><>0<>0<>568252afb9fc051c0e5999e637c3b68b<>res://.godot/imported/Ancient Monument Details.png-5e27426aa9ec6d6bc24b34c2a9bfc797.ctex::
+Ancient Monument Tileset.png::CompressedTexture2D::6502287532777801235::1775247173::1775247201::1::::<><><>0<>0<>fe7d1a77510e3eaa74c958efaede8526<>res://.godot/imported/Ancient Monument Tileset.png-4f7499a72c49f97b2c0e594f33bb1935.ctex::
+background_color.png::CompressedTexture2D::608284713645808412::1775247173::1775247201::1::::<><><>0<>0<>0efe2f3aefeb9e7ce88c57b224fd66ea<>res://.godot/imported/background_color.png-745dc6cc9d503c068726a5deca4a6bf7.ctex::
+collision.svg::CompressedTexture2D::1533667773256361448::1775247173::1775247201::1::::<><><>0<>0<>87ad45d81bf1c0692dd40d0b3fb7c516<>res://.godot/imported/collision.svg-793453e9e7a84150a22483ec477bd797.ctex::
+Firefly Forest Background Details.png::CompressedTexture2D::6967705099904926307::1775247173::1775247201::1::::<><><>0<>0<>ae541f177d89a1e0f83f20325d2a807f<>res://.godot/imported/Firefly Forest Background Details.png-c9647445a593a5df6e33cb5ebdea11e3.ctex::
+Firefly Forest Background Tileset.png::CompressedTexture2D::6894659872229405764::1775247173::1775247201::1::::<><><>0<>0<>aa32287a56eabad4803360d8fd606fe2<>res://.godot/imported/Firefly Forest Background Tileset.png-3b2b3be9a8c51b9be4535e1f7d81a2da.ctex::
+Firefly Forest Background.png::CompressedTexture2D::8974448103933865393::1775247173::1775247201::1::::<><><>0<>0<>8b648004d6b11368f01a7258da3ac852<>res://.godot/imported/Firefly Forest Background.png-6fd195d7df766c20f528dc8c4bfeb37c.ctex::
+Firefly Forest Hazard.png::CompressedTexture2D::6227462641969852072::1775247173::1775247201::1::::<><><>0<>0<>c32984a1b330a662ee67b37c4e0ff767<>res://.godot/imported/Firefly Forest Hazard.png-8b3e1164cfb16498d43752dadf72acf6.ctex::
+Firefly Forest Tileset Overlay.png::CompressedTexture2D::3614631207617595118::1775247173::1775247201::1::::<><><>0<>0<>68d1832ba3f46d3017d2ff16b0bb9d2e<>res://.godot/imported/Firefly Forest Tileset Overlay.png-59d7d2f4d0b83a54b915965fd86cff8a.ctex::
+testing_block.png::CompressedTexture2D::8599966409789383999::1775247173::1775247201::1::::<><><>0<>0<>0e1e86ef04518e5d385c4e6f564203b8<>res://.godot/imported/testing_block.png-58b1f256d396c86d979d655e98fdac0b.ctex::
+::res://assets/unused assets/::1775247202
+Cat Climbing1.png::CompressedTexture2D::1809484551354410470::1775247173::1775247201::1::::<><><>0<>0<>07b875f77b9afcd7f67c92d7baeb448a<>res://.godot/imported/Cat Climbing1.png-caf6a3c7ac7da23f85b264acd4c703bd.ctex::
+Cat Climbing2.png::CompressedTexture2D::7592959482077657614::1775247173::1775247201::1::::<><><>0<>0<>949be76c3eb0ba1864482ca12dbc982e<>res://.godot/imported/Cat Climbing2.png-c64f128e18e6450495b21d3f7c375517.ctex::
+Cat Climbing3.png::CompressedTexture2D::6357034193493731488::1775247173::1775247202::1::::<><><>0<>0<>776b581ac280d7189122f9e56b6853e4<>res://.godot/imported/Cat Climbing3.png-0806212aeec81f6936326ee367642cb2.ctex::
+Cat Climbing4.png::CompressedTexture2D::2006253779984430471::1775247173::1775247202::1::::<><><>0<>0<>e70181cdc6b60a4da3abfe134a065241<>res://.godot/imported/Cat Climbing4.png-e185e14e4b530c02bce09b78ac355130.ctex::
+character_body_2d.tscn::PackedScene::216098170030787172::1775247173::0::1::::<><><>0<>0<><>::uid://bycl6bey1imp6::::res://character_body_2d.gd<>uid://ci4slpjml7uv6::::res://Cat-idle-spritesheet.png<>uid://ttbs1bstpyit::::res://animated_sprite_2d.gd
+node_2d.tscn::PackedScene::5092543218647723544::1775247173::0::1::::<><><>0<>0<><>::uid://chq7r33bt1iyo::::res://Dune Labs Forest Scene.svg<>uid://ck8gte0wx3dvk::::res://Screenshot 2026-03-04 034218.png<>uid://cl8c74bnvng6f::::res://Dune Labs Forest Scene Overlay.svg<>uid://ci4slpjml7uv6::::res://Cat-idle-spritesheet.png<>uid://bycl6bey1imp6::::res://character_body_2d.gd<>uid://c3ch5e6yd6ci7::::res://Cat Running Spritesheet.png<>uid://ttbs1bstpyit::::res://animated_sprite_2d.gd<>uid://sddbx27p06rt::::res://node_2d.gdshader<>uid://cipkqflss3fqy::::res://overlay.gd
+Tiles and stuff.tscn::PackedScene::7474033460987304118::1775247173::0::1::::<><><>0<>0<><>::uid://ck8gte0wx3dvk::::res://Screenshot 2026-03-04 034218.png<>uid://chq7r33bt1iyo::::res://Dune Labs Forest Scene.svg<>uid://cl8c74bnvng6f::::res://Dune Labs Forest Scene Overlay.svg<>uid://bycl6bey1imp6::::res://character_body_2d.gd<>uid://dny7ceqdfyu0e::::res://Cat Climbing1.png<>uid://ci4slpjml7uv6::::res://Cat-idle-spritesheet.png<>uid://c3ch5e6yd6ci7::::res://Cat Running Spritesheet.png<>uid://ex7k8cx3p4o8::::res://Cat Climbing2.png<>uid://cla14bhc4vlo1::::res://Cat Climbing3.png<>uid://ttbs1bstpyit::::res://animated_sprite_2d.gd<>uid://dugx8k1m71woo::::res://Cat Climbing4.png<>uid://d2j1sbksur0ci::::res://Cat Jumping Animation-Sheet.png
+::res://gdextentions/::1775247173
+::res://gdextentions/godot-cpp/::1775247173
+::res://scenes/::1775290092
+blue_fireflies.tscn::PackedScene::7932801118430905087::1775247173::0::1::::<><><>0<>0<><>::uid://8hpqx8vs3188::::res://assets/images/other/main.png<>uid://deana7sgajwt8::::res://scripts/blue_fireflies.gd<>uid://c35w4eil3t0ho::::res://assets/images/spritesheets/Enemies/Blue Firefly-Sheet.png<>uid://cqgehswqr7reh::::res://assets/images/spritesheets/Enemies/Blue Firefly Glow.png
+cip.tscn::PackedScene::5213933945459489670::1775247173::0::1::::<><><>0<>0<><>::uid://elwjyd6p31fs::::res://scripts/cip.gd<>uid://bg2xo343ghw4j::::res://assets/images/spritesheets/Cips and Relics/Cip-Sheet.png<>uid://8hpqx8vs3188::::res://assets/images/other/main.png
+fireflies.tscn::PackedScene::575710550618044371::1775247173::0::1::::<><><>0<>0<><>::uid://bdi2sea7mv5mf::::res://scripts/firefly.gd<>uid://8sgvimim3k2b::::res://assets/images/spritesheets/Enemies/Firefly Light.png<>uid://8hpqx8vs3188::::res://assets/images/other/main.png<>uid://cei5t8x78c3o7::::res://assets/images/spritesheets/Enemies/Fireflies 3-Sheet.png
+game.gdshader::Shader::6082102547220360705::1775290092::0::1::::<><><>0<>0<><>::
+game.tscn::PackedScene::8183729580308332318::1775290092::0::1::::<><><>0<>0<><>::uid://d04j34stsu7ar::::res://assets/images/tilesets/Firefly Forest Background.png<>uid://c5h3bnesx3d2s::::res://assets/images/tilesets/Firefly Forest Background Tileset.png<>uid://c6ds72j6jakd7::::res://scenes/player.tscn<>uid://v36jwqnbnsw3::::res://assets/images/tilesets/collision.svg<>uid://c6jhc5i44rp6r::::res://assets/images/tilesets/Firefly Forest Background Details.png<>uid://cuyvnuiqdhqs3::::res://assets/images/tilesets/Firefly Forest Hazard.png<>uid://cyv0yw4xjpvtr::::res://assets/images/tilesets/Ancient Monument Tileset.png<>uid://xj4d17wo5v8d::::res://assets/images/tilesets/Ancient Monument Details.png<>uid://dur5gp8qvehsp::::res://assets/images/tilesets/testing_block.png<>uid://brq7ph0xfqady::::res://assets/images/tilesets/Firefly Forest Tileset Overlay.png<>uid://ig44sfwx8rxj::::res://scenes/fireflies.tscn<>uid://cswhlto8fy3r6::::res://scenes/game.gdshader<>uid://cgjwy3ime4wpi::::res://scenes/cip.tscn<>uid://dlayctgpsy3nv::::res://scenes/blue_fireflies.tscn<>uid://cfrwpoub4o4v2::::res://scenes/shade.tscn<>uid://dpo1o82wp4u14::::res://scripts/foreground.gd<>uid://dntsbnr0ip1w1::::res://scenes/Springshroom.tscn<>uid://bgs83f6154ahs::::res://scenes/Shrub.tscn
+player.tscn::PackedScene::6956040138156368862::1775247947::0::1::::<><><>0<>0<><>::uid://c8qtrgjtkbiw5::::res://assets/images/spritesheets/player_cat/idle.png<>uid://do62elngv6cn7::::res://scripts/player.gd<>uid://dtpwjrtgedemr::::res://assets/images/spritesheets/player_cat/crouching_idle.png<>uid://beqrbxobqe6x7::::res://assets/images/spritesheets/player_cat/climbing.png<>uid://wgfsl3fwff7v::::res://assets/images/spritesheets/player_cat/jumping.png<>uid://bku83ocvth5y3::::res://assets/images/spritesheets/player_cat/running.png<>uid://ctaw6oik8r1ow::::res://assets/images/spritesheets/player_cat/crouching_running.png<>uid://wff8s1ladlac::::res://assets/images/spritesheets/player_cat/ide_to_sit.png<>uid://cr7qpb70f8oh1::::res://assets/images/spritesheets/player_cat/sleeping.png<>uid://fgt5f3ti7llv::::res://assets/images/spritesheets/player_cat/sitting.png<>uid://dca82xoa4wkw5::::res://assets/images/spritesheets/player_cat/waking.png<>uid://8hpqx8vs3188::::res://assets/images/other/main.png
+shade.tscn::PackedScene::5160243334452579897::1775247173::0::1::::<><><>0<>0<><>::uid://dc0r6k866do1g::::res://scripts/shade.gd<>uid://ikbqqswesk6v::::res://assets/images/spritesheets/Enemies/shade Idle-Sheet.png<>uid://btwu08vteoqgb::::res://assets/images/spritesheets/Enemies/Shade Running-Sheet.png
+Shrub.tscn::PackedScene::2846766519813240520::1775290092::0::1::::<><><>0<>0<><>::uid://dv6xufm5tneqn::::res://assets/images/spritesheets/Enemies/Shrub-Sheet.png<>uid://cprnxvpsfh8ub::::res://scripts/shrub.gd<>uid://3as25fxxm7cb::::res://assets/images/spritesheets/Enemies/Shrub Turn-Sheet.png
+springshroom.tscn::PackedScene::8112035597576984774::1775290092::0::1::::<><><>0<>0<><>::uid://c3g33gplhp5lm::::res://assets/images/spritesheets/other/Springshroom.png<>uid://bwk0anl5hl55f::::res://scripts/springshroom.gd
+::res://scripts/::1775290092
+blue_fireflies.gd::GDScript::7440808455364073223::1775247173::0::1::::<>Node2D<><>0<>0<><>::
+cip.gd::GDScript::304816642457283988::1775247173::0::1::::<>Node2D<><>0<>0<><>::
+firefly.gd::GDScript::2615173951298889725::1775247173::0::1::::<>Node2D<><>0<>0<><>::
+foreground.gd::GDScript::8242601413134284601::1775290092::0::1::::<>TileMapLayer<><>0<>0<><>::
+player.gd::GDScript::8207548672509129514::1775248103::0::1::::<>CharacterBody2D<><>0<>0<><>::
+shade.gd::GDScript::7352337308357050714::1775247173::0::1::::<>CharacterBody2D<><>0<>0<><>::
+shrub.gd::GDScript::5861599964928733237::1775290092::0::1::::<>CharacterBody2D<><>0<>0<><>::
+springshroom.gd::GDScript::3952737647258858433::1775247173::0::1::::<>AnimatedSprite2D<><>0<>0<><>::

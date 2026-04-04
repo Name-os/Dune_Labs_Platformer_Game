@@ -44,6 +44,9 @@ var wall_jump_cooldown := 10
 var shroom_jump_radius := 40;
 var springshrooms := []
 
+#checkpoints and teleport points
+var last_checkpoint := Vector2()
+
 var mod_values = {
 	"crouching" : 0.6,
 	"climb"     : 1.5,
@@ -54,6 +57,10 @@ func _ready():
 	shroom_jump_radius *= shroom_jump_radius #for faster distance calculations due to no need for square roots
 	for shroom in get_tree().get_nodes_in_group("springshroom"):
 		springshrooms.append(shroom)
+
+func _on_hurtbox_area_entered(_area: Area2D) -> void:
+	print("fergeg")
+	position = last_checkpoint
 
 func cap(value, min_val, max_val): #may be brokens
 	value = min(value, max_val) if max_val else value
@@ -149,6 +156,10 @@ func climb(im):
 		velocity.y = 0
 		
 func get_input():
+	#experimental
+	if Input.is_action_just_pressed("checkpoint"):
+		last_checkpoint = position
+	
 	if not allow_input:
 		return
 	gravity_mod = 1.0

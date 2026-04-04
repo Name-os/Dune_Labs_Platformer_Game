@@ -1,4 +1,4 @@
-res://scripts/shrub.gd
-res://scenes/Shrub.tscn
-res://scenes/game.gdshader
 res://scenes/game.tscn
+res://scenes/game.gdshader
+res://scenes/player.tscn
+res://scripts/player.gd

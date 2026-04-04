@@ -15,9 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://cgjwy3ime4wpi" path="res://scenes/cip.tscn" id="9_vtaks"]
 [ext_resource type="PackedScene" uid="uid://dlayctgpsy3nv" path="res://scenes/blue_fireflies.tscn" id="10_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://cfrwpoub4o4v2" path="res://scenes/shade.tscn" id="10_trtic"]
-[ext_resource type="Script" uid="uid://dpo1o82wp4u14" path="res://scenes/foreground.gd" id="11_264po"]
-[ext_resource type="PackedScene" path="res://scenes/springshroom.tscn" id="15_ir15t"]
-[ext_resource type="PackedScene" path="res://scenes/Springshroom.tscn" id="16_ca42v"]
+[ext_resource type="Script" uid="uid://dpo1o82wp4u14" path="res://scripts/foreground.gd" id="11_264po"]
+[ext_resource type="PackedScene" uid="uid://dntsbnr0ip1w1" path="res://scenes/Springshroom.tscn" id="16_ca42v"]
+[ext_resource type="PackedScene" uid="uid://bgs83f6154ahs" path="res://scenes/Shrub.tscn" id="18_ssvqc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trtic"]
 texture = ExtResource("1_0tnpc")
@@ -2194,12 +2194,18 @@ position = Vector2(1632, 384)
 [node name="Blue Fireflies 2" parent="entities" unique_id=1222206902 instance=ExtResource("10_kvpfn")]
 position = Vector2(3168, 116)
 
-[node name="Springshroom" parent="entities" unique_id=950917899 instance=ExtResource("15_ir15t")]
+[node name="Springshroom" parent="entities" unique_id=950917899 instance=ExtResource("16_ca42v")]
 position = Vector2(-497, 736)
 frame_progress = 0.0
 
 [node name="Springshroom2" parent="entities" unique_id=933085558 instance=ExtResource("16_ca42v")]
 position = Vector2(-617, 128)
+
+[node name="Shrub" parent="entities" unique_id=964134891 instance=ExtResource("18_ssvqc")]
+position = Vector2(768, 554)
+
+[node name="Shrub 2" parent="entities" unique_id=1776558183 instance=ExtResource("18_ssvqc")]
+position = Vector2(2512, 425)
 
 [node name="lighting" type="Node2D" parent="." unique_id=1193534898]
 

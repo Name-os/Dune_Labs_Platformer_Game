@@ -1,6 +1,5 @@
-res://scenes/springshroom.tscn
-res://scenes/game.tscn
-res://scenes/Springshroom.tscn
-res://scenes/game.tres
 res://scenes/game.gdshader
-res://scenes/foreground.gd
+res://scenes/Shrub.tscn
+res://scenes/shrub.gd
+res://scenes/game.tscn
+res://scripts/shrub.gd

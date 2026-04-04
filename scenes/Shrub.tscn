@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bgs83f6154ahs"]
+
+[ext_resource type="Texture2D" uid="uid://dv6xufm5tneqn" path="res://assets/images/spritesheets/Enemies/Shrub-Sheet.png" id="1_px0su"]
+[ext_resource type="Script" uid="uid://cprnxvpsfh8ub" path="res://scripts/shrub.gd" id="1_skkrm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ciasn"]
+atlas = ExtResource("1_px0su")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mk0eb"]
+atlas = ExtResource("1_px0su")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmtqt"]
+atlas = ExtResource("1_px0su")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fua44"]
+atlas = ExtResource("1_px0su")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1kct"]
+atlas = ExtResource("1_px0su")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq6xn"]
+atlas = ExtResource("1_px0su")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6gnl2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ciasn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mk0eb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmtqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fua44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1kct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq6xn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_briay"]
+size = Vector2(52, 52)
+
+[node name="Shrub" type="CharacterBody2D" unique_id=964134891]
+script = ExtResource("1_skkrm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1289356987]
+position = Vector2(0, -9)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_6gnl2")
+frame_progress = 0.08163044
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=871633760]
+position = Vector2(-2, 29)
+shape = SubResource("RectangleShape2D_briay")
+
+[node name="Wall Check" type="RayCast2D" parent="." unique_id=1141089078]
+position = Vector2(-2, 30)
+target_position = Vector2(30, 0)
+
+[node name="Floor Check" type="RayCast2D" parent="." unique_id=1634547419]
+position = Vector2(28, 29)
+target_position = Vector2(0, 32)

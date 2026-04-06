@@ -8,43 +8,42 @@ extends CharacterBody2D
 var dir                 := Vector2()
 var speed_mod           := 1.0
 var gravity_mod         := 1.0
-var velocity_last_frame := Vector2.ZERO
+var velocity_last_frame := Vector2.ZERO #idk what for
 
 #stamina costs
 var stamina_max            := 1000 #large stamina value for testing
 var stamina                := stamina_max
-var stamina_drain_climb    := 18.0
-var stamina_drain_grip     := 12.0
-var stamina_cost_wall_jump := 20.0
+var stamina_drain_climb    := 18.0 #stamina drain while climbing walls
+var stamina_drain_grip     := 12.0 #stamina drain while just griping stationaty on wall
+var stamina_cost_wall_jump := 20.0 #stamina cost for wall jumping
 
 #state
 var crouching           := false
 var climbing            := false
-var climbing_moving     := false
+var climbing_moving     := false #if we are moving while climbing
 var allow_input         := true
-var was_on_floor        := false
+var was_on_floor        := false #if on floor last frame
 
 #transition frame timers
-var land_frames   := 0
-var jump_frames   := 0
-var land_duration := 13
-var jump_duration := 3
-
-#heavy landing threshold
-var land_velocity_threshold := 800.0
+#idk what all for
+var land_frames             := 0
+var jump_frames             := 0
+var land_duration           := 13
+var jump_duration           := 3
+var land_velocity_threshold := 800.0 #needed speed for big landing animation and input blocking to activate
 
 #coyote time
-var frames_since_on_floor := 0
-var coyote_time_limit     := 4
+var frames_since_on_floor := 0 #how many frames since we were on the floor
+var coyote_time_limit     := 4 #how many frames tolerance we get to jump (coyote time)
 
 #wall jump cooldown
-var wall_jump_cooldown := 10
-var wall_jump_cooldown_ := 15 #not in use yet
+var wall_jump_cooldown       := 10 #how much longer before we get to wall jump again
+var wall_jump_cooldown_time := 15 #how much frames we cant wall jump for (cooldown)
 
 #springshroom related stuff
-var shroom_jump_radius := 40;
-var springshrooms := []
-
+var shroom_jump_radius := 40 #the radius which we have to be for spring shroom to activate
+var springshrooms      := [] #all of the springshrooms in a list for optimisation
+ 
 #checkpoints and teleport points
 var last_checkpoint := Vector2.ZERO
 
@@ -145,7 +144,7 @@ func climb(im):
  
 	if im["jump"]: #if we jump on wall
 		climbing = false #make no longer climbing as if not going off wall they can just stick back
-		wall_jump_cooldown = 15 #make a jump cooldown in frames
+		wall_jump_cooldown = wall_jump_cooldown_time #make a jump cooldown in frames
 		jump_frames = jump_duration #idk
 		stamina -= stamina_cost_wall_jump #reduce stamina by correct amount
 		stamina = cap(stamina, 0, null) #cap stamina at min 0
@@ -175,34 +174,51 @@ func get_input():
 	crouching = false if not is_on_floor() else crouching #not allow crouching if not on ground
 	climbing = false if wall_jump_cooldown < 1 else climbing #not allow climbing if cooldown is active
 
-	#get axis but no normalization
+	#get axis but no normalization as we dont want speed decrease
 	dir.x = Input.get_axis("left", "right")
 	dir.y = Input.get_axis("up", "down")
 	#change head position based on movement
 	$head.position.x = (-1.0 if dir.x < 0 else 3.0) if dir.x != 0 else $head.position.x #move head to the right position
 	
-#	create a movement map
+#	create a hashmap with the input values
 	var im = {
 		"up"    : Input.is_action_pressed("up"),
 		"down"  : Input.is_action_pressed("down"),
 		"climb" : Input.is_action_pressed("climb"),
 		"jump"  : Input.is_action_just_pressed("jump")
 	}
-
-	if im["climb"] and $body/ShapeCast2D.is_colliding() and wall_jump_cooldown <= 0 and not $head/ShapeCast2D.is_colliding():
-		climb(im)
+	
+#	if we are holding climb, is touching wall, wall jump cooldown is done, and head is not clipped
+	if im["climb"] and $body/ShapeCast2D.is_colliding() and wall_jump_cooldown < 1 and not $head/ShapeCast2D.is_colliding():
+		climb(im) #climb as it is very big
 	elif not $head/ShapeCast2D.is_colliding(): #dont allow certain things if head is clipped
-		if im["jump"] or velocity.y > 0:
-			for shroom in springshrooms: #could optimise using different nodes #springshroom jumping
-				if position.distance_squared_to(shroom.position) <= shroom_jump_radius:
-					velocity.y = -jump_power * mod_values["shroom_jump"]
-					shroom.play("spring")
-					return
-		if im["jump"] and (is_on_floor() or frames_since_on_floor <= coyote_time_limit):
-			velocity.y = -jump_power
-			jump_frames = jump_duration #may need to add to shroom bit
+		if im["jump"]: #check if we jumped
+			if velocity.y > 0: #if we are going down we can shroom bounce
+				for shroom in springshrooms: #could optimise using different nodes #springshroom jumping
+	#				if our distance is within a certain radius we jump
+					if position.distance_squared_to(shroom.position) <= shroom_jump_radius:
+						velocity.y = -jump_power * mod_values["shroom_jump"] #apply mod with jump
+						shroom.play("spring") #play animation
+						return #break out
+			if im["jump"] and (is_on_floor() or frames_since_on_floor <= coyote_time_limit):
+				velocity.y = -jump_power #jump
+				jump_frames = jump_duration #may need to add to shroom bit
 		else:
-			crouching = im["down"] and is_on_floor() and not im["climb"]
+			crouching = im["down"] and is_on_floor() #check if croucing
+						
+		#old script, here for now if there are no bugs
+		#if im["jump"] or velocity.y > 0: #spring shroom bit
+			#for shroom in springshrooms: #could optimise using different nodes #springshroom jumping
+##				if our distance is within a certain radius we jump
+				#if position.distance_squared_to(shroom.position) <= shroom_jump_radius:
+					#velocity.y = -jump_power * mod_values["shroom_jump"] #apply mod with jump
+					#shroom.play("spring") #play animation
+					#return #break out
+		#if im["jump"] and (is_on_floor() or frames_since_on_floor <= coyote_time_limit):
+			#velocity.y = -jump_power
+			#jump_frames = jump_duration #may need to add to shroom bit
+		#else:
+			#crouching = im["down"] and is_on_floor() and not im["climb"]
 
 func update_vel(delta):
 	if not is_on_floor() and not climbing:
@@ -216,22 +232,22 @@ func update_vel(delta):
 	if $hitbox.is_colliding():
 		position = last_checkpoint
 
-func _physics_process(delta: float) -> void:	
-	if land_frames <= 0:
+func _physics_process(delta: float) -> void:
+	if land_frames <= 0: #idk yet
 		allow_input = true
 
-	frames_since_on_floor = 0 if is_on_floor() else frames_since_on_floor + 1
 	get_input()
-	update_stamina(delta)
-	update_timers()
+	update_stamina(delta) #update the stamina of the player
+	update_timers() #update sleep and sit timers
 	toggle_crouch()
 	force_state_update()
 	update_vel(delta)
-	velocity_last_frame = velocity
-	move_and_slide()
+	frames_since_on_floor = 0 if is_on_floor() else frames_since_on_floor + 1 #coyte time
+	velocity_last_frame = velocity #idk why used yet
+	move_and_slide() #update position
 
-
-	# detect landing right before animate so land_frames is set before animate reads it
+#	if we have a large fall, disable input for a frame and play landing animation
+#	also do this before animate so is animated
 	if is_on_floor() and not was_on_floor:
 		if velocity_last_frame.y >= land_velocity_threshold:
 			land_frames = land_duration
@@ -239,11 +255,11 @@ func _physics_process(delta: float) -> void:
 			jump_frames = 0
 
 	animate()
-	was_on_floor = is_on_floor()
+	was_on_floor = is_on_floor() #idk what for yet
 
-	land_frames = land_frames - 1 if land_frames > 0 else land_frames
-	jump_frames = jump_frames - 1 if jump_frames > 0 else jump_frames
-	wall_jump_cooldown = wall_jump_cooldown - 1 if wall_jump_cooldown > 0 else wall_jump_cooldown
+	land_frames = land_frames - 1 if land_frames > 0 else land_frames # idk what for yet
+	jump_frames = jump_frames - 1 if jump_frames > 0 else jump_frames # idk what for yet
+	wall_jump_cooldown = wall_jump_cooldown - 1 if wall_jump_cooldown > 0 else wall_jump_cooldown #update cooldown
 
 #camera values:
 # left: 0

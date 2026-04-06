@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dlayctgpsy3nv" path="res://scenes/blue_fireflies.tscn" id="10_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://cfrwpoub4o4v2" path="res://scenes/shade.tscn" id="10_trtic"]
 [ext_resource type="Script" uid="uid://dpo1o82wp4u14" path="res://scripts/foreground.gd" id="11_264po"]
-[ext_resource type="PackedScene" uid="uid://dntsbnr0ip1w1" path="res://scenes/Springshroom.tscn" id="16_ca42v"]
+[ext_resource type="PackedScene" uid="uid://dntsbnr0ip1w1" path="res://scenes/springshroom.tscn" id="16_ca42v"]
 [ext_resource type="PackedScene" uid="uid://bgs83f6154ahs" path="res://scenes/Shrub.tscn" id="18_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://mowenkpavgke" path="res://scenes/Town.tscn" id="19_264po"]
 
@@ -2195,7 +2195,7 @@ script = ExtResource("11_264po")
 player = NodePath("../../player")
 
 [node name="player" parent="." unique_id=716516889 instance=ExtResource("1_uwrxv")]
-position = Vector2(780, 500)
+position = Vector2(-385, 682)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1312563648]
 zoom = Vector2(1.5, 1.5)

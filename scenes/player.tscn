@@ -454,8 +454,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jej6c"]
-size = Vector2(18.5, 19.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1ej7"]
+size = Vector2(15, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
 size = Vector2(14, 8)
@@ -472,7 +472,6 @@ size = Vector2(9.9, 3)
 [node name="player" type="CharacterBody2D" unique_id=2019189749 groups=["player"]]
 scale = Vector2(2, 2)
 collision_layer = 2
-collision_mask = 5
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=811242530]
@@ -481,14 +480,12 @@ sprite_frames = SubResource("SpriteFrames_qfm1y")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="hurtbox" type="Area2D" parent="." unique_id=1004528378]
-position = Vector2(2, 1.5)
-collision_layer = 0
+[node name="hitbox" type="ShapeCast2D" parent="." unique_id=2021478164]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(1, 8)
+shape = SubResource("RectangleShape2D_f1ej7")
+target_position = Vector2(0, 0)
 collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1046760790]
-position = Vector2(-1.25, 6.25)
-shape = SubResource("RectangleShape2D_jej6c")
 
 [node name="body" type="CollisionShape2D" parent="." unique_id=1781272868]
 position = Vector2(1, 12)
@@ -526,5 +523,3 @@ position = Vector2(1.5, 0)
 energy = 0.9
 texture = ExtResource("10_y4r1p")
 texture_scale = 2.0
-
-[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]

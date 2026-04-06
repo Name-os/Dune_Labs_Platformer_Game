@@ -45,7 +45,7 @@ var shroom_jump_radius := 40;
 var springshrooms := []
 
 #checkpoints and teleport points
-var last_checkpoint := Vector2()
+var last_checkpoint := Vector2.ZERO
 
 var mod_values = {
 	"crouching" : 0.6,
@@ -202,7 +202,12 @@ func update_vel(delta):
 	else:
 		velocity.x = dir.x * speed * speed_mod
 
-func _physics_process(delta: float) -> void:
+#	check if touching hurtbox
+	if $hitbox.is_colliding():
+		position = last_checkpoint
+
+
+func _physics_process(delta: float) -> void:	
 	if land_frames <= 0:
 		allow_input = true
 
@@ -215,6 +220,7 @@ func _physics_process(delta: float) -> void:
 	update_vel(delta)
 	velocity_last_frame = velocity
 	move_and_slide()
+
 
 	# detect landing right before animate so land_frames is set before animate reads it
 	if is_on_floor() and not was_on_floor:

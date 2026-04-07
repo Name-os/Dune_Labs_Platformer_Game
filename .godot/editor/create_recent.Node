@@ -1,6 +1,8 @@
-ShapeCast2D
 CollisionShape2D
+StaticBody2D
 Area2D
+Node2D
+ShapeCast2D
 CharacterBody2D
 RayCast2D
 AnimatedSprite2D
@@ -8,7 +10,5 @@ Sprite2D
 TileMapLayer
 PointLight2D
 DirectionalLight2D
-Node2D
 Timer
 Camera2D
-AnimationPlayer

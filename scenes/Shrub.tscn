@@ -70,6 +70,7 @@ animations = [{
 size = Vector2(52, 52)
 
 [node name="Shrub" type="CharacterBody2D" unique_id=964134891]
+collision_layer = 8
 script = ExtResource("1_skkrm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1289356987]

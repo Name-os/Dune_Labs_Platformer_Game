@@ -481,7 +481,6 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="hitbox" type="ShapeCast2D" parent="." unique_id=2021478164]
-visible = false
 modulate = Color(1, 1, 0, 1)
 position = Vector2(1, 8)
 shape = SubResource("RectangleShape2D_f1ej7")
@@ -493,7 +492,6 @@ position = Vector2(1, 12)
 shape = SubResource("RectangleShape2D_qlg0r")
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="body" unique_id=48215455]
-visible = false
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_3v2ag")
 target_position = Vector2(0, -10)
